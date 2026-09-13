@@ -29,11 +29,11 @@ class _AgentsScreenState extends State<AgentsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Agents IA'),
-        backgroundColor: const Color(0xFF0F0F0F),
+        backgroundColor: const Color(0xFF0284C7),
         foregroundColor: Colors.white,
         elevation: 0,
       ),
-      backgroundColor: const Color(0xFF0F0F0F),
+      backgroundColor: const Color(0xFFF8FBFF),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Container(
@@ -42,12 +42,12 @@ class _AgentsScreenState extends State<AgentsScreen> {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                const Color(0xFF22C55E).withOpacity(0.15),
-                const Color(0xFF22C55E).withOpacity(0.05),
+                const Color(0xFF38BDF8).withOpacity(0.15),
+                const Color(0xFF38BDF8).withOpacity(0.05),
               ],
             ),
             border: Border.all(
-              color: const Color(0xFF22C55E).withOpacity(0.3),
+              color: const Color(0xFF38BDF8).withOpacity(0.3),
               width: 1,
             ),
             borderRadius: BorderRadius.circular(12),
@@ -80,7 +80,7 @@ class _AgentsScreenState extends State<AgentsScreen> {
       decoration: const BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color: Color(0xFF22C55E),
+            color: Color(0xFF38BDF8),
             width: 0.5,
           ),
         ),
@@ -92,7 +92,7 @@ class _AgentsScreenState extends State<AgentsScreen> {
             children: [
               Icon(
                 Icons.smart_toy,
-                color: const Color(0xFF22C55E),
+                color: const Color(0xFF38BDF8),
                 size: 28,
               ),
               const SizedBox(width: 12),
@@ -102,7 +102,7 @@ class _AgentsScreenState extends State<AgentsScreen> {
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF22C55E),
+                    color: Color(0xFF38BDF8),
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -186,7 +186,7 @@ class _AgentsScreenState extends State<AgentsScreen> {
         children: [
           FaIcon(
             icon,
-            color: const Color(0xFF22C55E),
+            color: const Color(0xFF38BDF8),
             size: 20,
           ),
           const SizedBox(width: 12),
@@ -249,11 +249,11 @@ class _AgentsScreenState extends State<AgentsScreen> {
                         fillColor: const Color(0xFF1F2937),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
-                          borderSide: const BorderSide(color: Color(0xFF22C55E)),
+                          borderSide: const BorderSide(color: Color(0xFF38BDF8)),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
-                          borderSide: const BorderSide(color: Color(0xFF22C55E)),
+                          borderSide: const BorderSide(color: Color(0xFF38BDF8)),
                         ),
                         contentPadding: const EdgeInsets.all(12),
                       ),
@@ -266,7 +266,7 @@ class _AgentsScreenState extends State<AgentsScreen> {
                     width: 48,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF22C55E),
+                        backgroundColor: const Color(0xFF38BDF8),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -298,7 +298,7 @@ class _AgentsScreenState extends State<AgentsScreen> {
             width: 32,
             height: 32,
             decoration: BoxDecoration(
-              color: message.isUser ? const Color(0xFF6B7280) : const Color(0xFF22C55E),
+              color: message.isUser ? const Color(0xFF6B7280) : const Color(0xFF38BDF8),
               borderRadius: BorderRadius.circular(16),
             ),
             child: FaIcon(
@@ -314,13 +314,13 @@ class _AgentsScreenState extends State<AgentsScreen> {
               decoration: BoxDecoration(
                 color: message.isUser
                     ? const Color(0xFF374151)
-                    : const Color(0xFF22C55E).withOpacity(0.15),
+                    : const Color(0xFF38BDF8).withOpacity(0.15),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
                 message.text,
                 style: TextStyle(
-                  color: message.isUser ? Colors.white : const Color(0xFF86EFAC),
+                  color: message.isUser ? Colors.white : const Color(0xFF7DD3FC),
                   fontSize: 14,
                 ),
               ),
@@ -379,9 +379,9 @@ class _AgentsScreenState extends State<AgentsScreen> {
       child: OutlinedButton(
         onPressed: () => _handleQuickAction(text),
         style: OutlinedButton.styleFrom(
-          side: const BorderSide(color: Color(0xFF22C55E)),
+          side: const BorderSide(color: Color(0xFF38BDF8)),
           backgroundColor: Colors.transparent,
-          foregroundColor: const Color(0xFF22C55E),
+          foregroundColor: const Color(0xFF38BDF8),
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),

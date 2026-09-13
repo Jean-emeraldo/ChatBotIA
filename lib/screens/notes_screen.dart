@@ -4,22 +4,28 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class NotesScreen extends StatelessWidget {
   const NotesScreen({Key? key}) : super(key: key);
 
-  static const Color primaryGreen = Color(0xFF22C55E);
-  static const Color borderGreen = Color(0xFF22C55E);
-  static const Color textGray300 = Color(0xFFD1D5DB);
+  static const Color primaryBlue = Color(0xFF38BDF8);
+  static const Color borderBlue = Color(0xFFBAE6FD);
+  static const Color textGray300 = Color(0xFF475569);
   static const Color textWhite = Colors.white;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Sauvegardes')),
-      backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: const Text('Sauvegardes'),
+        backgroundColor: const Color(0xFF0284C7),
+      ),
+      backgroundColor: const Color(0xFFF8FBFF),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Card(
-            color: Colors.grey[900],
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            color: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+              side: const BorderSide(color: Color(0xFFBAE6FD), width: 1),
+            ),
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: LayoutBuilder(
@@ -44,7 +50,6 @@ class NotesScreen extends StatelessWidget {
                           ],
                         );
 
-                  // Pour éviter l'overflow vertical, on met dans SingleChildScrollView si en colonne
                   return isWide
                       ? content
                       : SingleChildScrollView(child: content);
@@ -61,10 +66,10 @@ class NotesScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           'Rapports Disponibles',
           style: TextStyle(
-            color: textWhite,
+            color: Color(0xFF0F172A),
             fontSize: 18,
             fontWeight: FontWeight.w600,
           ),
@@ -85,26 +90,24 @@ class NotesScreen extends StatelessWidget {
 
   Widget _reportButton({required IconData icon, required String label}) {
     return InkWell(
-      onTap: () {
-        // Action au clic
-      },
+      onTap: () {},
       borderRadius: BorderRadius.circular(8),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
         decoration: BoxDecoration(
-          border: Border.all(color: borderGreen),
+          border: Border.all(color: borderBlue),
           borderRadius: BorderRadius.circular(8),
-          color: Colors.transparent,
+          color: const Color(0xFFF0F9FF),
         ),
         child: Row(
           children: [
-            FaIcon(icon, color: textGray300, size: 20),
+            FaIcon(icon, color: primaryBlue, size: 20),
             const SizedBox(width: 12),
             Expanded(
               child: Text(
                 label,
-                style: TextStyle(
-                  color: textGray300,
+                style: const TextStyle(
+                  color: Color(0xFF0F172A),
                   fontSize: 16,
                 ),
               ),
@@ -119,10 +122,10 @@ class NotesScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           'Métriques Clés',
           style: TextStyle(
-            color: textWhite,
+            color: Color(0xFF0F172A),
             fontSize: 18,
             fontWeight: FontWeight.w600,
           ),
@@ -145,23 +148,24 @@ class NotesScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.black.withOpacity(0.5),
+        color: const Color(0xFFF0F9FF),
         borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: const Color(0xFFBAE6FD)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             label,
-            style: TextStyle(
-              color: textGray300,
+            style: const TextStyle(
+              color: Color(0xFF475569),
               fontSize: 14,
             ),
           ),
           Text(
             value,
-            style: TextStyle(
-              color: primaryGreen,
+            style: const TextStyle(
+              color: Color(0xFF0284C7),
               fontWeight: FontWeight.w600,
               fontSize: 14,
             ),

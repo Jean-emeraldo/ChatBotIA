@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BackupScreen extends StatelessWidget {
-  // Couleurs personnalisées d'après tes variables CSS (à ajuster si besoin)
-  static const Color primaryGreen = Color(0xFF22C55E);
-  static const Color borderGreen = Color(0xFF22C55E);
-  static const Color darkGreen = Color(0xFF16A34A);
-  static const Color textGray300 = Color(0xFFD1D5DB);
-  static const Color bgBlack = Color(0xFF000000);
-  static const Color bgBlackOpacity = Color.fromRGBO(0, 0, 0, 0.5);
+  static const Color primaryBlue = Color(0xFF38BDF8);
+  static const Color borderBlue = Color(0xFFBAE6FD);
+  static const Color darkBlue = Color(0xFF0284C7);
+  static const Color textGray300 = Color(0xFF475569);
+  static const Color bgWhite = Colors.white;
+  static const Color bgWhiteOpacity = Color.fromRGBO(240, 249, 255, 0.9);
 
   final List<Map<String, dynamic>> infoItems = [
     {
@@ -31,37 +30,35 @@ class BackupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bgBlack,
+      backgroundColor: const Color(0xFFF8FBFF),
       appBar: AppBar(
-        title: Text('Sauvegarde'),
-        backgroundColor: Colors.black,
+        title: const Text('Sauvegarde'),
+        backgroundColor: const Color(0xFF0284C7),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: LayoutBuilder(
             builder: (context, constraints) {
-              // Largeur max disponible
               double maxWidth = constraints.maxWidth;
-              // Largeur pour chaque colonne (min 300px ou full width si écran petit)
               double itemWidth = maxWidth < 650 ? maxWidth : 300;
 
               return Wrap(
                 spacing: 24,
                 runSpacing: 24,
                 children: [
-                  // Liste infos
                   SizedBox(
                     width: itemWidth,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: infoItems.map((item) {
                         return Container(
-                          padding: EdgeInsets.all(12),
-                          margin: EdgeInsets.only(bottom: 12),
+                          padding: const EdgeInsets.all(12),
+                          margin: const EdgeInsets.only(bottom: 12),
                           decoration: BoxDecoration(
-                            color: bgBlackOpacity,
+                            color: bgWhiteOpacity,
                             borderRadius: BorderRadius.circular(8),
+                            border: Border.all(color: borderBlue),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -70,14 +67,14 @@ class BackupScreen extends StatelessWidget {
                                 children: [
                                   FaIcon(
                                     item['icon'],
-                                    color: primaryGreen,
+                                    color: primaryBlue,
                                     size: 16,
                                   ),
-                                  SizedBox(width: 12),
+                                  const SizedBox(width: 12),
                                   Text(
                                     item['label'],
-                                    style: TextStyle(
-                                      color: textGray300,
+                                    style: const TextStyle(
+                                      color: Color(0xFF0F172A),
                                       fontSize: 14,
                                     ),
                                   ),
@@ -85,8 +82,8 @@ class BackupScreen extends StatelessWidget {
                               ),
                               Text(
                                 item['value'],
-                                style: TextStyle(
-                                  color: primaryGreen,
+                                style: const TextStyle(
+                                  color: Color(0xFF0284C7),
                                   fontWeight: FontWeight.w600,
                                   fontSize: 14,
                                 ),
@@ -97,7 +94,6 @@ class BackupScreen extends StatelessWidget {
                       }).toList(),
                     ),
                   ),
-                  // Liste actions
                   SizedBox(
                     width: itemWidth,
                     child: Column(
@@ -106,25 +102,19 @@ class BackupScreen extends StatelessWidget {
                           icon: FontAwesomeIcons.syncAlt,
                           label: 'Réaliser une sauvegarde',
                           isPrimary: true,
-                          onPressed: () {
-                            // TODO: action sauvegarde
-                          },
+                          onPressed: () {},
                         ),
-                        SizedBox(height: 12),
+                        const SizedBox(height: 12),
                         _BackupActionButton(
                           icon: FontAwesomeIcons.undoAlt,
                           label: 'Restaurer une sauvegarde',
-                          onPressed: () {
-                            // TODO: action restauration
-                          },
+                          onPressed: () {},
                         ),
-                        SizedBox(height: 12),
+                        const SizedBox(height: 12),
                         _BackupActionButton(
                           icon: FontAwesomeIcons.trashAlt,
                           label: 'Supprimer les sauvegardes',
-                          onPressed: () {
-                            // TODO: action suppression
-                          },
+                          onPressed: () {},
                         ),
                       ],
                     ),
@@ -162,24 +152,23 @@ class __BackupActionButtonState extends State<_BackupActionButton> {
 
   @override
   Widget build(BuildContext context) {
-    final primaryGreen = BackupScreen.primaryGreen;
-    final borderGreen = BackupScreen.borderGreen;
-    final darkGreen = BackupScreen.darkGreen;
+    final primaryBlue = BackupScreen.primaryBlue;
+    final borderBlue = BackupScreen.borderBlue;
+    final darkBlue = BackupScreen.darkBlue;
     final textGray300 = BackupScreen.textGray300;
-    final bgBlack = BackupScreen.bgBlack;
 
     Color backgroundColor;
     Color borderColor;
     Color textColor;
 
     if (widget.isPrimary) {
-      backgroundColor = _hovering ? darkGreen : primaryGreen;
-      borderColor = primaryGreen;
-      textColor = bgBlack;
+      backgroundColor = _hovering ? darkBlue : primaryBlue;
+      borderColor = primaryBlue;
+      textColor = Colors.white;
     } else {
-      backgroundColor = _hovering ? primaryGreen.withOpacity(0.1) : Colors.transparent;
-      borderColor = _hovering ? primaryGreen : borderGreen;
-      textColor = _hovering ? primaryGreen : textGray300;
+      backgroundColor = _hovering ? primaryBlue.withOpacity(0.1) : Colors.transparent;
+      borderColor = _hovering ? primaryBlue : borderBlue;
+      textColor = _hovering ? primaryBlue : textGray300;
     }
 
     return MouseRegion(
@@ -190,7 +179,7 @@ class __BackupActionButtonState extends State<_BackupActionButton> {
         style: OutlinedButton.styleFrom(
           backgroundColor: backgroundColor,
           side: BorderSide(color: borderColor),
-          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
@@ -204,7 +193,7 @@ class __BackupActionButtonState extends State<_BackupActionButton> {
               color: textColor,
               size: 16,
             ),
-            SizedBox(width: 12),
+            const SizedBox(width: 12),
             Expanded(
               child: Text(
                 widget.label,

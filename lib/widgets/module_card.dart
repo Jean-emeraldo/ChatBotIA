@@ -18,18 +18,35 @@ class ModuleCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        elevation: 4,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+          side: const BorderSide(color: Color(0xFFBAE6FD), width: 1),
+        ),
+        elevation: 2,
+        color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(icon, size: 40, color: Colors.green),
-              SizedBox(height: 12),
-              Text(title, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-              SizedBox(height: 6),
-              Text(subtitle, style: TextStyle(fontSize: 13, color: Colors.grey)),
+              Icon(icon, size: 40, color: const Color(0xFF38BDF8)),
+              const SizedBox(height: 12),
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF0F172A),
+                ),
+              ),
+              const SizedBox(height: 6),
+              Text(
+                subtitle,
+                style: const TextStyle(
+                  fontSize: 13,
+                  color: Color(0xFF475569),
+                ),
+              ),
             ],
           ),
         ),

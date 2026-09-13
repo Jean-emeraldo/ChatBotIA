@@ -24,7 +24,7 @@ extension PriorityExtension on Priority {
       case Priority.medium:
         return Colors.orange.shade400;
       case Priority.low:
-        return Colors.green.shade400;
+        return const Color(0xFF38BDF8);
     }
   }
 
@@ -61,7 +61,7 @@ extension StatusExtension on Status {
       case Status.inProgress:
         return Colors.cyan.shade400;
       case Status.done:
-        return Colors.green.shade400;
+        return const Color(0xFF38BDF8);
       case Status.planned:
         return Colors.purple.shade400;
     }

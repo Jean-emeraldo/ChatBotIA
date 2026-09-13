@@ -95,7 +95,7 @@ class _MessagesScreenState extends State<MessagesScreen>
                   padding: EdgeInsets.only(right: 4.0),
                   child: CircleAvatar(
                     radius: 14,
-                    backgroundColor: Colors.grey,
+                    backgroundColor: Color(0xFF7DD3FC),
                     child: Icon(Icons.person, size: 16, color: Colors.white),
                   ),
                 ),
@@ -109,9 +109,7 @@ class _MessagesScreenState extends State<MessagesScreen>
                     horizontal: 14,
                   ),
                   decoration: BoxDecoration(
-                    color: isSent
-                        ? const Color(0xFFDCF8C6)
-                        : Colors.white,
+                    color: isSent ? const Color(0xFFE0F2FE) : Colors.white,
                     borderRadius: BorderRadius.only(
                       topLeft: const Radius.circular(16),
                       topRight: const Radius.circular(16),
@@ -120,7 +118,7 @@ class _MessagesScreenState extends State<MessagesScreen>
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
+                        color: Colors.black.withOpacity(0.08),
                         blurRadius: 2,
                         offset: const Offset(0, 1),
                       ),
@@ -132,7 +130,7 @@ class _MessagesScreenState extends State<MessagesScreen>
                       Text(
                         message['text'] ?? '',
                         style: const TextStyle(
-                          color: Colors.black,
+                          color: Color(0xFF0F172A),
                           fontSize: 16,
                         ),
                       ),
@@ -152,7 +150,7 @@ class _MessagesScreenState extends State<MessagesScreen>
                             const Icon(
                               Icons.done_all,
                               size: 14,
-                              color: Colors.blue,
+                              color: Color(0xFF0284C7),
                             ),
                         ],
                       ),
@@ -171,7 +169,7 @@ class _MessagesScreenState extends State<MessagesScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFF075E54),
+        backgroundColor: const Color(0xFF0284C7),
         title: Row(
           children: [
             const CircleAvatar(
@@ -218,7 +216,7 @@ class _MessagesScreenState extends State<MessagesScreen>
           ),
         ],
       ),
-      backgroundColor: const Color(0xFFECE5DD),
+      backgroundColor: const Color(0xFFF3F8FF),
       body: Column(
         children: [
           Expanded(
@@ -284,7 +282,7 @@ class _MessagesScreenState extends State<MessagesScreen>
                 ),
                 const SizedBox(width: 8),
                 CircleAvatar(
-                  backgroundColor: const Color(0xFF075E54),
+                  backgroundColor: const Color(0xFF0284C7),
                   child: IconButton(
                     icon: const Icon(Icons.send, color: Colors.white),
                     onPressed: _sendMessage,

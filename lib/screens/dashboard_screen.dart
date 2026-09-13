@@ -26,12 +26,12 @@ class _DashboardScreenState extends State<DashboardScreen>
   late TabController _tabController;
   bool _isSidebarVisible = false;
 
-  final Color primaryGreen = const Color(0xFF22C55E);
-  final Color bgBlack = const Color(0xFF121212);
-  final Color borderGreen = const Color(0xFF16A34A);
-  final Color textGray300 = Colors.grey.shade300;
-  final Color textGray400 = Colors.grey.shade400;
-  final Color textGray500 = Colors.grey.shade500;
+  final Color primaryGreen = const Color(0xFF38BDF8);
+  final Color bgBlack = const Color(0xFFF8FBFF);
+  final Color borderGreen = const Color(0xFFBAE6FD);
+  final Color textGray300 = const Color(0xFF334155);
+  final Color textGray400 = const Color(0xFF475569);
+  final Color textGray500 = const Color(0xFF64748B);
 
   @override
   void initState() {
@@ -94,7 +94,7 @@ class _DashboardScreenState extends State<DashboardScreen>
       title: Text(
         'Dashboard Entreprise',
         style: TextStyle(
-          color: primaryGreen,
+          color: const Color(0xFF0284C7),
           fontWeight: FontWeight.w800,
           fontSize: 20,
         ),
@@ -188,165 +188,159 @@ class _DashboardScreenState extends State<DashboardScreen>
   }
 
   Widget _buildSidebar() {
-    return AnimatedPositioned(
-      duration: const Duration(milliseconds: 300),
-      left: _isSidebarVisible ? 0 : -280,
-      top: 0,
-      bottom: 0,
-      child: Container(
-        width: 280,
-        color: bgBlack,
-        child: SafeArea(
-          child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
-                decoration: BoxDecoration(
-                  border: Border(bottom: BorderSide(color: borderGreen)),
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 36,
-                      height: 36,
-                      decoration: BoxDecoration(
+    return Container(
+      width: 280,
+      color: bgBlack,
+      child: SafeArea(
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+              decoration: BoxDecoration(
+                border: Border(bottom: BorderSide(color: borderGreen)),
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    width: 36,
+                    height: 36,
+                    decoration: BoxDecoration(
+                      color: primaryGreen,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    alignment: Alignment.center,
+                    child: const Text(
+                      'G',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Text(
+                      'Dashboard',
+                      style: TextStyle(
                         color: primaryGreen,
-                        borderRadius: BorderRadius.circular(10),
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18,
                       ),
-                      alignment: Alignment.center,
-                      child: const Text(
-                        'G',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: Text(
-                        'Dashboard',
-                        style: TextStyle(
-                          color: primaryGreen,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 18,
-                        ),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.close, color: primaryGreen),
-                      onPressed: () {
-                        setState(() {
-                          _isSidebarVisible = false;
-                        });
-                      },
-                    ),
-                  ],
-                ),
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.close, color: primaryGreen),
+                    onPressed: () {
+                      setState(() {
+                        _isSidebarVisible = false;
+                      });
+                    },
+                  ),
+                ],
               ),
-              Expanded(
-                child: ListView(
-                  padding: EdgeInsets.zero,
-                  children: [
-                    _buildSidebarItem(
-                      icon: FontAwesomeIcons.home,
-                      label: 'Dashboard',
-                      index: 0,
-                    ),
-                    _buildSidebarItem(
-                      icon: FontAwesomeIcons.checkSquare,
-                      label: 'Gestion des Tâches',
-                      index: 1,
-                    ),
-                    _buildSidebarItem(
-                      icon: FontAwesomeIcons.folderOpen,
-                      label: 'Projets',
-                      index: 2,
-                    ),
-                    _buildSidebarItem(
-                      icon: FontAwesomeIcons.chartBar,
-                      label: 'Rapports',
-                      index: 3,
-                    ),
-                    _buildSidebarItem(
-                      icon: FontAwesomeIcons.comments,
-                      label: 'Messages',
-                      index: 4,
-                    ),
-                    _buildSidebarItem(
-                      icon: FontAwesomeIcons.users,
-                      label: 'Clients',
-                      index: 5,
-                    ),
-                    _buildSidebarItem(
-                      icon: FontAwesomeIcons.robot,
-                      label: 'Goly IA',
-                      index: 6,
-                    ),
-                    _buildSidebarItem(
-                      icon: FontAwesomeIcons.database,
-                      label: 'Sauvegarde',
-                      index: 7,
-                    ),
-                  ],
-                ),
+            ),
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: [
+                  _buildSidebarItem(
+                    icon: FontAwesomeIcons.home,
+                    label: 'Dashboard',
+                    index: 0,
+                  ),
+                  _buildSidebarItem(
+                    icon: FontAwesomeIcons.checkSquare,
+                    label: 'Gestion des Tâches',
+                    index: 1,
+                  ),
+                  _buildSidebarItem(
+                    icon: FontAwesomeIcons.folderOpen,
+                    label: 'Projets',
+                    index: 2,
+                  ),
+                  _buildSidebarItem(
+                    icon: FontAwesomeIcons.chartBar,
+                    label: 'Rapports',
+                    index: 3,
+                  ),
+                  _buildSidebarItem(
+                    icon: FontAwesomeIcons.comments,
+                    label: 'Messages',
+                    index: 4,
+                  ),
+                  _buildSidebarItem(
+                    icon: FontAwesomeIcons.users,
+                    label: 'Clients',
+                    index: 5,
+                  ),
+                  _buildSidebarItem(
+                    icon: FontAwesomeIcons.robot,
+                    label: 'Goly IA',
+                    index: 6,
+                  ),
+                  _buildSidebarItem(
+                    icon: FontAwesomeIcons.database,
+                    label: 'Sauvegarde',
+                    index: 7,
+                  ),
+                ],
               ),
-              Container(
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  border: Border(top: BorderSide(color: borderGreen)),
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 36,
-                      height: 36,
-                      decoration: BoxDecoration(
-                        color: primaryGreen,
-                        shape: BoxShape.circle,
-                      ),
-                      alignment: Alignment.center,
-                      child: const Text(
-                        'GO',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14,
-                        ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                border: Border(top: BorderSide(color: borderGreen)),
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    width: 36,
+                    height: 36,
+                    decoration: BoxDecoration(
+                      color: primaryGreen,
+                      shape: BoxShape.circle,
+                    ),
+                    alignment: Alignment.center,
+                    child: const Text(
+                      'GO',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14,
                       ),
                     ),
-                    const SizedBox(width: 14),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Rabetsara',
-                            style: TextStyle(
-                              color: primaryGreen,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16,
-                            ),
-                            overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(width: 14),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Rabetsara',
+                          style: TextStyle(
+                            color: primaryGreen,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16,
                           ),
-                          Text(
-                            'Goly@admin.com',
-                            style: TextStyle(
-                              color: textGray500,
-                              fontSize: 13,
-                            ),
-                            overflow: TextOverflow.ellipsis,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        Text(
+                          'Goly@admin.com',
+                          style: TextStyle(
+                            color: textGray500,
+                            fontSize: 13,
                           ),
-                        ],
-                      ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -442,7 +436,13 @@ class _DashboardScreenState extends State<DashboardScreen>
                     BackupScreen(),
                   ],
                 ),
-                if (_isSidebarVisible) _buildSidebar(),
+                if (_isSidebarVisible)
+                  Positioned(
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
+                    child: _buildSidebar(),
+                  ),
               ],
             )
           : Row(
